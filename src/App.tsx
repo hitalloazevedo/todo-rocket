@@ -9,12 +9,14 @@ import { useState } from 'react'
 function App() {
 
   const [tasks, setTasks] = useState([])
+  const [doneTasks, setDoneTasks] = useState(0)
 
 
   // Cada task é um obj {id: number, content: 'blabla'}
   interface Task {
     id: number;
     content: string;
+    done: boolean;
   }
 
   // createNewTask receberá um task {}
@@ -28,6 +30,12 @@ function App() {
     })
 
     setTasks(newArray)
+    
+    const leftTasks = newArray.filter(onetask => {
+      return onetask.done == false
+    })
+    
+    setDoneTasks(newArray.length - leftTasks.length)
   }
 
   return (
@@ -38,7 +46,7 @@ function App() {
       <div className='tasksArea'>
         <header>
           <p className='createdTasks'>Tarefas criadas <span>{tasks.length}</span></p>
-          <p className='doneTasks'>Concluídas <span>0</span></p>
+          <p className='doneTasks'>Concluídas <span>{doneTasks} de {tasks.length}</span></p>
         </header>
 
         <div className='tasksList'>
@@ -47,8 +55,11 @@ function App() {
               return (
                 <Task 
                 key={task.content}
-                content={task.content}
+                allTasks={tasks}
+                task={task}
                 deleteTask={deleteTask}
+                setDoneTasks={setDoneTasks}
+                doneTasks={doneTasks}
                 />
               )
             })
