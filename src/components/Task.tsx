@@ -1,5 +1,6 @@
 import styles from './Task.module.css'
 import { Trash } from 'phosphor-react'
+import { MouseEvent, ReactSVGElement } from 'react'
 
 interface Task {
     id: number;
@@ -15,6 +16,10 @@ interface TaskProps {
     doneTasks: number;
 }
 
+interface Event {
+    
+}
+
 export function Task(props: TaskProps) {
 
     return (
@@ -22,7 +27,7 @@ export function Task(props: TaskProps) {
             <label className={styles.container}>
                 <input 
                     type="checkbox" 
-                    onClick={(e: React.MouseEvent<HTMLInputElement>) => {
+                    onClick={(e: any) => {
 
                         if (e.target.checked) {
                             props.task.done = true
@@ -52,7 +57,7 @@ export function Task(props: TaskProps) {
                 className={styles.trashIcon} 
                 id='deleteButton'
                 size={24}
-                onClick={(e: React.MouseEvent<SVGElement>) => {
+                onClick={(e: any) => {
                     if (e.target.id == 'deleteButton'){
                         props.deleteTask(e.target.parentNode.querySelector('p').textContent)
                     } else {
