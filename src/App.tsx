@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 function App() {
 
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState<any[]>([])
   const [doneTasks, setDoneTasks] = useState(0)
 
 

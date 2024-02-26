@@ -22,7 +22,8 @@ export function Task(props: TaskProps) {
             <label className={styles.container}>
                 <input 
                     type="checkbox" 
-                    onClick={(e) => {
+                    onClick={(e: React.MouseEvent<HTMLInputElement>) => {
+
                         if (e.target.checked) {
                             props.task.done = true
 
@@ -51,7 +52,7 @@ export function Task(props: TaskProps) {
                 className={styles.trashIcon} 
                 id='deleteButton'
                 size={24}
-                onClick={(e) => {
+                onClick={(e: React.MouseEvent<SVGElement>) => {
                     if (e.target.id == 'deleteButton'){
                         props.deleteTask(e.target.parentNode.querySelector('p').textContent)
                     } else {
