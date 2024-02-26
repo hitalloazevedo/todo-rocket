@@ -21,6 +21,14 @@ body {
     color: var(--blue);
 }
 
+.createdTasks > span, .doneTasks > span {
+    background-color: var(--gray-400);
+    color: var(--gray-200);
+    padding: 2px 8px;
+    border-radius: 9999px;
+    margin-left: 8px;
+}
+
 .doneTasks {
     color: var(--purple-dark);
 }
