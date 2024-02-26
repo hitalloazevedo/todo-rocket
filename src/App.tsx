@@ -1,5 +1,6 @@
 import './App.css'
 import { Header } from './components/Header'
+import { PlusCircle } from 'phosphor-react'
 
 function App() {
   return (
@@ -7,9 +8,8 @@ function App() {
       <Header/>
       
       <div className='newTask'>
-        <input type="text" />
-        <button>Criar [icon]</button>
-
+        <input type="text" placeholder='Adicione uma nova tarefa' />
+        <button className='newTaskButton'>Criar <PlusCircle size={16}/></button>
       </div>
     </>
   )
