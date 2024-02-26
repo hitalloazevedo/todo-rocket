@@ -1,6 +1,5 @@
 import styles from './Task.module.css'
 import { Trash } from 'phosphor-react'
-import { MouseEvent, ReactSVGElement } from 'react'
 
 interface Task {
     id: number;
@@ -14,10 +13,6 @@ interface TaskProps {
     deleteTask: (task: string) => void;
     setDoneTasks: (n: number) => void
     doneTasks: number;
-}
-
-interface Event {
-    
 }
 
 export function Task(props: TaskProps) {
