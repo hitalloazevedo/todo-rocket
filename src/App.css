@@ -1,3 +1,47 @@
 body {
     background-color: var(--gray-600);
 }
+
+.tasksArea {
+    width: 46rem;
+    margin: auto;
+}
+
+.tasksArea header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tasksArea header > p {
+    font-size: .875rem;
+    font-weight: bold;
+}
+
+.createdTasks {
+    color: var(--blue);
+}
+
+.doneTasks {
+    color: var(--purple-dark);
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 4rem 1.5rem;
+    margin-top: 1.5rem;
+
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+}
+
+.tasks > img {
+    margin-bottom: 1rem;
+}
+
+.tasks > p {
+    color: var(--gray-300);
+}
