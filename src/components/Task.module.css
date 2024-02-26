@@ -1,0 +1,109 @@
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: .75rem;
+    background-color: var(--gray-500);
+    height: 4.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.062);
+    color: var(--gray-100);
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: .75rem;
+}
+
+.task > p {
+    width: calc(100% - 100px);
+    font-size: .875rem;
+    line-height: 1.4;
+}
+
+.trashIcon {
+    color: var(--gray-300);
+    border-radius: 4px;
+    padding: .15rem;
+    box-sizing: border-box;
+    transition: .2s;
+}
+
+.trashIcon:hover {
+    background-color: var(--gray-400);
+    color: var(--danger);
+}
+
+/*===================================================*/
+/* Personalized checkbox */
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+  }
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: transparent;
+    border-radius: 50%;
+
+    border: 2px solid var(--blue);
+
+    transition: background-color .3s;
+
+    box-sizing: border-box;
+}
+
+.container:hover input ~ .checkmark {
+    background-color: var(--blue-dark);
+}
+
+.container input:checked ~ .checkmark {
+    background-color: var(--purple-dark);
+    border: 0;
+}
+
+.container input:checked:hover ~ .checkmark {
+    background-color: var(--purple);
+}
+
+.container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 3px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/*====================================================*/
+
+.taskDone {
+    text-decoration: line-through;
+    color: var(--gray-300);
+}

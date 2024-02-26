@@ -25,23 +25,30 @@ body {
     color: var(--purple-dark);
 }
 
-.tasks {
+.tasksList {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    padding: 4rem 1.5rem;
     margin-top: 1.5rem;
 
     border-top: 1px solid var(--gray-400);
     border-radius: 8px;
 }
 
-.tasks > img {
+.warningEmpty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 1.5rem;
+}
+
+.warningEmpty > img {
     margin-bottom: 1rem;
 }
 
-.tasks > p {
+.warningEmpty > p {
     color: var(--gray-300);
 }
