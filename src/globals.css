@@ -23,3 +23,8 @@
 
     --danger: #E25858;
 }
+
+.taskDone {
+    text-decoration: line-through;
+    color: var(--gray-300);
+}
