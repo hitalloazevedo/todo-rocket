@@ -1,9 +1,18 @@
 import styles from './Task.module.css'
 import { Trash } from 'phosphor-react'
 
-interface TaskProps {
+interface Task {
+    id: number;
     content: string;
+    done: boolean;
+}
+
+interface TaskProps {
+    task: Task;
+    allTasks: Task[];
     deleteTask: (task: string) => void;
+    setDoneTasks: (n: number) => void
+    doneTasks: number;
 }
 
 export function Task(props: TaskProps) {
@@ -15,20 +24,35 @@ export function Task(props: TaskProps) {
                     type="checkbox" 
                     onClick={(e) => {
                         if (e.target.checked) {
-                            e.target.parentNode.parentNode.querySelector('p').classList.toggle('taskDone')
+                            props.task.done = true
+
+                            if (props.task.done) {
+                                e.target.parentNode.parentNode.querySelector('p').classList.toggle('taskDone')
+                            }
                         } else {
-                            e.target.parentNode.parentNode.querySelector('p').classList.toggle('taskDone')
+                            props.task.done = false
+
+                            if (!props.task.done) {
+                                e.target.parentNode.parentNode.querySelector('p').classList.toggle('taskDone')
+                            } 
                         }
+
+                        const doneTasks = props.allTasks.filter(onetask => {
+                            return onetask.done == true
+                        })
+
+                        props.setDoneTasks(doneTasks.length)
                     }}
                 />
                 <span className={styles.checkmark}></span>
             </label>
-            <p>{props.content}</p>
+            <p>{props.task.content}</p>
             <Trash 
                 className={styles.trashIcon} 
+                id='deleteButton'
                 size={24}
                 onClick={(e) => {
-                    if (e.target.classList.contains('_trashIcon_if5gv_49')){
+                    if (e.target.id == 'deleteButton'){
                         props.deleteTask(e.target.parentNode.querySelector('p').textContent)
                     } else {
                         props.deleteTask(e.target.parentNode.parentNode.parentNode.querySelector('p').textContent)
