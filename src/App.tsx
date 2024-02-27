@@ -41,7 +41,7 @@ function App() {
   return (
     <>
       <Header/>
-      <TaskInput handleNewTask={createNewTask}/>
+      <TaskInput handleNewTask={createNewTask} tasks={tasks}/>
 
       <div className='tasksArea'>
         <header>

@@ -8,11 +8,12 @@ interface Task {
     done: boolean;
 }
 
-interface Handler {
+interface TaskInputProps {
     handleNewTask: (task: Task) => void;
+    tasks: Task[];
 }
 
-export function TaskInput({ handleNewTask }: Handler) {
+export function TaskInput({ handleNewTask, tasks }: TaskInputProps) {
 
     const [taskContent, setTaskContent] = useState('')
     const [id, setId] = useState(0)
@@ -42,10 +43,20 @@ export function TaskInput({ handleNewTask }: Handler) {
                 className={styles.newTaskButton}
                 onClick={() => {
                     if (taskContent != '') {
-                        handleNewTask({id: id, content: taskContent, done: false})
-                        setId((state) => {
-                            return state + 1
+                        const createdTask = tasks.filter(task => {
+                            if (task.content == taskContent) {
+                                return task
+                            }
                         })
+
+                        if (createdTask[0]?.content == taskContent) {
+                            return
+                        } else {
+                            handleNewTask({id: id, content: taskContent, done: false})
+                            setId((state) => {
+                                return state + 1
+                            })
+                        }
                     }
                     setTaskContent('')
                 }}
