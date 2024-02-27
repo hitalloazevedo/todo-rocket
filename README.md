@@ -1,7 +1,7 @@
 
 # Todo List 
 
-Todo list desenvolvido com React e Typescript, fiz o uso de React Hooks e gerenciamento de estados, o design foi baseado num design do Figma, disponibilizado pela Rocketseat. É um projeto voltado a fortalecer meus conhecimentos em React e Javascript.
+[Todo List](https://hitallozevedo-todolist-react.netlify.app/) desenvolvido com React e Typescript, fiz o uso de React Hooks e gerenciamento de estados, o design foi baseado num design do Figma, disponibilizado pela Rocketseat. É um projeto voltado a fortalecer meus conhecimentos em React e Javascript.
 
 
 
