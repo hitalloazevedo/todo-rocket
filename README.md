@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Todo List 
 
-Currently, two official plugins are available:
+Todo list desenvolvido com React e Typescript, fiz o uso de React Hooks e gerenciamento de estados, o design foi baseado num design do Figma, disponibilizado pela Rocketseat. É um projeto voltado a fortalecer meus conhecimentos em React e Javascript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- Adicionar nova tarefa
+- Concluir tarefa
+- Deletar tarefa existente
+- Contador de tarefas
+- Contador de tarefas concluídas
+- Impede de adicionar uma tarefa igual (Adicional)
+## Technologies
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+**Client:** React, Typescript, Javascript, Css Modules
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**Development Tools:** Vite
+
+
+## Screenshots
+
+![App Screenshot](https://i.pinimg.com/736x/92/27/13/9227133365b370f1fd4c485b833f0b87.jpg)
+![App Screenshot](https://i.pinimg.com/736x/f0/c0/3d/f0c03da047919751365f814e2da25cd6.jpg)
+
+
+## Authors
+
+- [@Hitallo Azevedo](https://www.github.com/hitalloazevedo)
+
